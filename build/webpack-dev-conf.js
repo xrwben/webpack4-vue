@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 
 module.exports = {
@@ -49,6 +50,10 @@ module.exports = {
       {
         test: /\.(htm|html)$/,
         use: "html-loader"
+      },
+      {
+        test: /\.vue$/,
+        use: ["vue-loader"]
       }
     ]
   },
@@ -95,7 +100,8 @@ module.exports = {
       canPrint: true // 默认 表示插件能否在console中打印信息
     }),
     // 添加热更新 如果package命令行中添加了--hot，这里就不用创建，这个插件才会自动添加
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new VueLoaderPlugin()
   ],
   devServer: {
     host: "localhost",
@@ -120,7 +126,7 @@ module.exports = {
 			// target: ""
 		}
   },
-  devtool: process.env.NODE_ENV === "development" ? "inline-source-map" : "source-map",
+  devtool: process.env.NODE_ENV === "development" ? "#cheap-module-eval-source-map" : "#source-map",
   // 导入不用写扩展名的
 	resolve: {
 		extensions: [".js", ".json", ".vue"]

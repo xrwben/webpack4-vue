@@ -1,19 +1,16 @@
-import "./style.css"
-import "./app.scss"
-import './asserts/logo.png';
-console.log("我是入口文件！！！");
+import Vue from "vue";
+import App from "./App.vue";
+// import router from './router'
+// import iView from 'iview';
+// import 'iview/dist/styles/iview.css';
 
-const test = () => {
-  console.log("123");
-}
-test();
-console.log(...[1,2,3]);
 
-if (process.env.NODE_ENV === "development") {
-  console.log("process.env->", process.env.NODE_ENV);
-} else {
-  console.log("qer");
-}
+// Vue.use(iView);
 
-// var img = document.createElement("img");img.src = "./asserts/logo.png"
-// document.body.appendChild(img);
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  render:h=>h(App)
+})
