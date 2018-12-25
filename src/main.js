@@ -7,7 +7,6 @@ import router from './router/index.js'
 
 // Vue.use(iView);
 
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

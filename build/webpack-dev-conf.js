@@ -12,6 +12,8 @@ module.exports = webpackMerge(webpackBaseConfig, {
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("development"),
     }),
+    // 添加热更新 如果package命令行中添加了--hot，这里就不用创建，这个插件才会自动添加
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     host: "localhost",

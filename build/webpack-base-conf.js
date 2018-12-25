@@ -58,12 +58,6 @@ module.exports = {
     ]
   },
   plugins: [
-    // 全局定义环境变量 
-    // 注意，因为这个插件直接执行文本替换，给定的值必须包含字符串本身内的实际引号。
-    // 通常，有两种方式来达到这个效果，使用 '"production"', 或者使用 JSON.stringify('production')。
-    // new webpack.DefinePlugin({
-    //   "process.env.NODE_ENV": JSON.stringify("development"),
-    // }),
     // 打包的资源添加到哪个指定的html文件模板，有几个入口文件就new几个HtmlWebpackPlugin()
     new HtmlWebpackPlugin({
       title: "Webpack模板",
@@ -99,33 +93,8 @@ module.exports = {
       },
       canPrint: true // 默认 表示插件能否在console中打印信息
     }),
-    // 添加热更新 如果package命令行中添加了--hot，这里就不用创建，这个插件才会自动添加
-    new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin()
   ],
-  // devServer: {
-  //   host: "localhost",
-	// 	port: "8888",
-	// 	contentBase: path.resolve(__dirname, "../dist"),
-	// 	compress: true,
-	// 	hot: true,
-	// 	// open: true,
-	// 	// inline: true,
-	// 	historyApiFallback: true,
-	// 	overlay: {
-	// 		warnings: true,
-	// 		errors: true
-	// 	},
-	// 	proxy: {
-	// 		// "/api": {
-	// 		// 	target: "",
-	// 		// 	secure: false,
-	// 		// }
-	// 		// 代理多个
-	// 		// context: ["/api"],
-	// 		// target: ""
-	// 	}
-  // },
   devtool: process.env.NODE_ENV === "development" ? "#cheap-module-eval-source-map" : "#source-map",
   // 导入不用写扩展名的
 	resolve: {
