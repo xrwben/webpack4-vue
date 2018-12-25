@@ -1,5 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
+const webpackMerge = require("webpack-merge");
+const webpackBaseConfig = require("./webpack-base-conf.js");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -7,8 +9,8 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 
-module.exports = {
-  // mode: "development",
+module.exports = webpackMerge(webpackBaseConfig, {
+  mode: "development",
   entry: {
     app: path.resolve(__dirname, "../src/main.js")
   },
@@ -61,9 +63,9 @@ module.exports = {
     // 全局定义环境变量 
     // 注意，因为这个插件直接执行文本替换，给定的值必须包含字符串本身内的实际引号。
     // 通常，有两种方式来达到这个效果，使用 '"production"', 或者使用 JSON.stringify('production')。
-    // new webpack.DefinePlugin({
-    //   "process.env.NODE_ENV": JSON.stringify("development"),
-    // }),
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify("development"),
+    }),
     // 打包的资源添加到哪个指定的html文件模板，有几个入口文件就new几个HtmlWebpackPlugin()
     new HtmlWebpackPlugin({
       title: "Webpack模板",
@@ -103,32 +105,32 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin()
   ],
-  // devServer: {
-  //   host: "localhost",
-	// 	port: "8888",
-	// 	contentBase: path.resolve(__dirname, "../dist"),
-	// 	compress: true,
-	// 	hot: true,
-	// 	// open: true,
-	// 	// inline: true,
-	// 	historyApiFallback: true,
-	// 	overlay: {
-	// 		warnings: true,
-	// 		errors: true
-	// 	},
-	// 	proxy: {
-	// 		// "/api": {
-	// 		// 	target: "",
-	// 		// 	secure: false,
-	// 		// }
-	// 		// 代理多个
-	// 		// context: ["/api"],
-	// 		// target: ""
-	// 	}
-  // },
+  devServer: {
+    host: "localhost",
+		port: "8888",
+		contentBase: path.resolve(__dirname, "../dist"),
+		compress: true,
+		hot: true,
+		// open: true,
+		// inline: true,
+		historyApiFallback: true,
+		overlay: {
+			warnings: true,
+			errors: true
+		},
+		proxy: {
+			// "/api": {
+			// 	target: "",
+			// 	secure: false,
+			// }
+			// 代理多个
+			// context: ["/api"],
+			// target: ""
+		}
+  },
   devtool: process.env.NODE_ENV === "development" ? "#cheap-module-eval-source-map" : "#source-map",
   // 导入不用写扩展名的
 	resolve: {
 		extensions: [".js", ".json", ".vue"]
 	}
-}
+})

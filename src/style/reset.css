@@ -1,0 +1,116 @@
+@charset "utf-8";
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, input, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+address,caption,cite,code,dfn,th,var,blockquote,i {
+  font-style:normal;
+  font-weight:normal
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+a {
+  text-decoration: none;
+  outline: none;
+}
+html,body {
+  width: 100%;
+  height: 100%;
+  /*font-family: '微软雅黑', 'HanHei SC', 'PingFang SC', sans-serif;*/
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+ol, ul ,li {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input {
+  padding-top:0;
+  padding-bottom:0;
+  outline: none;
+}
+input::-moz-focus-inner {
+  border:none;
+  padding:0
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #999 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: red !important;
+  opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #999 !important;
+  opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #999 !important;
+  opacity: 1;
+}
+input[type="text"],input[type="password"],textarea {
+  outline-style:none;
+  -webkit-appearance:none
+}
+
+label {
+  cursor: pointer;
+}
+button {
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  font-family: 'HanHei SC', 'PingFang SC', '微软雅黑', sans-serif;
+}
+select {
+  outline: none;
+  font-family: 'HanHei SC', 'PingFang SC', '微软雅黑', sans-serif;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  font-size:0;
+}
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
