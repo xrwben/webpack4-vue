@@ -17,27 +17,28 @@
    + html-webpack-plugin
    + clean-webpack-plugin
    
-##### 四、js打包和兼容
+##### 四、js使用babel转码
 
    + babel-core、babel-loader
    + babel-preset-env、babel-plugin-transform-runtime、babel-preset-stage-2
 
-##### 五、（css|sass|less）文件打包、分离、压缩
+##### 五、（css|sass|less）文件打包、添加前缀、分离、压缩
 
    + css-loader、style-loader
    + node-sass、sass-loader
+   + postcss-loader、autoprefixer
+   + mini-css-extract-plugin
+   + optimize-css-assets-webpack-plugin
    
-##### 四、
+##### 六、图片字体等资源打包
 
-   + html-webpack-plugin
-   + clean-webpack-plugin
+   + url-loader
 
-##### 四、
+##### 七、html中的图片打包
 
-   + html-webpack-plugin
-   + clean-webpack-plugin
+   + html-loader
 
-##### 四、
+##### 八、
 
 
-##### 四、
+##### 九、
