@@ -9,7 +9,7 @@
 ##### 二、初始化项目
 
    + git init
-   + 安装webpack、webpack-dev-server
+   + 安装webpack、webpack-dev-server、webpack-merge
    + 配置好本地开发服务webpack-dev-server、配置好package.json启动
    
 ##### 三、html模板和清空dist
@@ -38,7 +38,19 @@
 
    + html-loader
 
-##### 八、
+##### 八、热更新
+
+   + 配置devServer
 
 
-##### 九、
+##### 九、分离不常变化的文件 比如node_modules引用的第三方库打包成一个单独的js文件
+
+   + uglifyjs-webpack-plugin
+   
+##### 十、安装vue或react
+
+   + vue、vue-loader、vue-template-compiler
+   + react、react-dom、babel-preset-react...
+ 
+ 
+ 
