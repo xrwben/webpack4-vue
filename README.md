@@ -51,6 +51,19 @@
 
    + vue、vue-loader、vue-template-compiler
    + react、react-dom、babel-preset-react...
+   
+   
+>> 这些配置大概满足的开发的需求，如果有特殊需求可以修改配置
+
+>>>>使用方式：
+
+   + git clone 
+   
+   + npm install 
+   
+   + 开发：npm run dev 
+   
+   + 打包： npm run build
  
  
  
