@@ -9,4 +9,10 @@
 ##### 二、初始化项目
 
    + git init
-   + 安装webpack、webpack-dev-server、配置好package.json
+   + 安装webpack、webpack-dev-server
+   + 配置好本地开发服务webpack-dev-server、配置好package.json启动
+   
+##### 三、html模板和清空dist
+
+   + html-webpack-plugin
+   + clean-webpack-plugin
