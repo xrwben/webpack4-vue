@@ -53,11 +53,13 @@
    + react、react-dom、babel-preset-react...
    
    
->> 这些配置大概满足的开发的需求，如果有特殊需求可以修改配置
+>这些配置大概满足的开发的需求，如果有特殊需求可以修改配置
 
->>>>使用方式：
+------
 
-   + git clone 
+**使用方式：**
+
+   + git clone https://github.com/xrwben/webpack4-vue.git
    
    + npm install 
    
