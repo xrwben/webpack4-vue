@@ -16,3 +16,28 @@
 
    + html-webpack-plugin
    + clean-webpack-plugin
+   
+##### 四、js打包和兼容
+
+   + babel-core、babel-loader
+   + babel-preset-env、babel-plugin-transform-runtime、babel-preset-stage-2
+
+##### 五、（css|sass|less）文件打包、分离、压缩
+
+   + css-loader、style-loader
+   + node-sass、sass-loader
+   
+##### 四、
+
+   + html-webpack-plugin
+   + clean-webpack-plugin
+
+##### 四、
+
+   + html-webpack-plugin
+   + clean-webpack-plugin
+
+##### 四、
+
+
+##### 四、
