@@ -37,6 +37,7 @@
 ##### 七、html中的图片打包
 
    + html-loader
+   tips: 这个插件会和html-webpack-plugin冲突，造成无法解析html模板参数
 
 ##### 八、热更新
 
