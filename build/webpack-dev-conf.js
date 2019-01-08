@@ -17,12 +17,12 @@ module.exports = webpackMerge(webpackBaseConfig, {
   ],
   devServer: {
     host: "localhost",
-		port: "8888",
+		port: "8080",
 		contentBase: path.resolve(__dirname, "../dist"),
 		compress: true,
 		hot: true,
-		// open: true,
-		// inline: true,
+		open: true,
+		inline: true,
 		historyApiFallback: true,
 		overlay: {
 			warnings: true,

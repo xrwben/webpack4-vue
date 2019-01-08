@@ -95,7 +95,7 @@ module.exports = {
     }),
     new VueLoaderPlugin()
   ],
-  devtool: process.env.NODE_ENV === "development" ? "#cheap-module-eval-source-map" : "#source-map",
+  devtool: process.env.NODE_ENV === "development" ? "eval-source-map" : "source-map",
   // 导入不用写扩展名的
 	resolve: {
 		extensions: [".js", ".json", ".vue"]
