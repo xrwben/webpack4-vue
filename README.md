@@ -21,6 +21,7 @@
 
    + ~~babel-core、babel-loader~~
    + ~~babel-preset-env、babel-plugin-transform-runtime、babel-preset-stage-2~~
+   + 当babel升级到7版本后,包名变成了@babel/core、@babel/preset-env
 
 ##### 五、（css|sass|less）文件打包、添加前缀、分离、压缩
 
