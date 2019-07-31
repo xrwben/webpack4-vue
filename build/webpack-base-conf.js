@@ -57,7 +57,7 @@ module.exports = {
       filename: "index.html", // 默认
       template: path.resolve(__dirname, "../index.html"), // 制定那个html模板
       inject: true, // 生成的script标签插入到那个位子（true、body、head、false） 默认body底部,
-      favicon: path.resolve(__dirname, "../favicon.ico"), // 图标
+      // favicon: path.resolve(__dirname, "../favicon.ico"), // 图标
       // 对浏览器查看源码的操作
       minify: {
         removeComments: true, // 移除注释
