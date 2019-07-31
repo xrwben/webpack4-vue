@@ -20,7 +20,16 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.svg$/,
+        loader: "svg-sprite-loader",
+        include: [path.resolve(__dirname, "../src/asserts/icon")],
+        options: {
+          symbolId: "x-icon-[name]",
+        },
+      },
+      {
         test: /\.(png|svg|jpg|gif|ico|woff|woff2|eot|ttf|otf)$/i,
+        exclude: [path.resolve(__dirname, "../src/asserts/icon")],
         use: [
           {
             loader: "url-loader",
@@ -48,7 +57,7 @@ module.exports = {
       filename: "index.html", // 默认
       template: path.resolve(__dirname, "../index.html"), // 制定那个html模板
       inject: true, // 生成的script标签插入到那个位子（true、body、head、false） 默认body底部,
-      favicon: "", // 图标
+      favicon: path.resolve(__dirname, "../favicon.ico"), // 图标
       // 对浏览器查看源码的操作
       minify: {
         removeComments: true, // 移除注释
@@ -60,9 +69,9 @@ module.exports = {
     }),
     new VueLoaderPlugin()
   ],
-  devtool: process.env.NODE_ENV === "development" ? "eval-source-map" : "source-map",
+  devtool: process.env.NODE_ENV === "development" ? "inline-source-map" : "source-map",
   // 导入不用写扩展名的
-	resolve: {
-		extensions: [".js", ".json", ".vue"]
-	}
-}
+  resolve: {
+    extensions: [".js", ".json", ".vue"]
+  }
+};

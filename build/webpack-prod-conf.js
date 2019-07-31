@@ -1,12 +1,17 @@
 const path = require("path");
-// const webpack = require("webpack");
+const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const webpackBaseConfig = require("./webpack-base-conf.js");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+// 当需要分析打包大小时 添加 --report
+if (process.env.npm_config_report) {
+  const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+  webpackBaseConfig.plugins.push(new BundleAnalyzerPlugin());
+}
 module.exports = webpackMerge(webpackBaseConfig, {
   mode: "production",
   module: {
@@ -45,25 +50,25 @@ module.exports = webpackMerge(webpackBaseConfig, {
         preset: ["default", { discardComments: { removeAll: true } }],
       },
       canPrint: true // 默认 表示插件能否在console中打印信息
-    })
+    }),
   ],
   optimization: {
     // 允许自己配置来覆盖默认的压缩配置，或者写到plugins也可以
     minimizer: [
       new UglifyJsPlugin({
         uglifyOptions: {
+          warnings: false,
           ecma: 6,
           output: {
             comments: false
           },
           compress: {
-            warnings: false,
             drop_console: true,
             drop_debugger: true
           }
         },
         sourceMap: true,
-        parallel: true
+        parallel: true // 使用多进程并行运行来提高构建速度
       })
     ],
     // 分离不常变化的文件 比如node_modules引用的第三方库打包成一个单独的js文件
@@ -78,4 +83,4 @@ module.exports = webpackMerge(webpackBaseConfig, {
       }
     }
   }
-})
+});
