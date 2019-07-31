@@ -53,6 +53,16 @@
    + vue、vue-loader、vue-template-compiler
    + react、react-dom、babel-preset-react...
    
+##### 十一、eslint代码检测工具
+
+   + eslint：代码检测核心库，然后新建.eslint.js文件去配置
+   + babel-eslint 检测babel编译后的代码
+   + eslint-config-规则名：此脚手架配置的是eslint-config-bitpower，它是基于airbnb配置，然后根据自己习惯自定义的编码规则插件
+   
+##### 十二、打包分析
+
+   + 
+   
    
 >这些配置大概满足的开发的需求，如果有特殊需求可以修改配置
 
