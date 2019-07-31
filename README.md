@@ -19,8 +19,8 @@
    
 ##### 四、js使用babel转码
 
-   + babel-core、babel-loader
-   + babel-preset-env、babel-plugin-transform-runtime、babel-preset-stage-2
+   + ~~babel-core、babel-loader~~
+   + ~~babel-preset-env、babel-plugin-transform-runtime、babel-preset-stage-2~~
 
 ##### 五、（css|sass|less）文件打包、添加前缀、分离、压缩
 
