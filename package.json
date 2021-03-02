@@ -14,8 +14,9 @@
   "author": "liben",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.5.21",
-    "vue-router": "^3.0.2"
+    "axios": "^0.21.1",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
@@ -46,10 +47,14 @@
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
     "svg-sprite-loader": "^4.1.6",
+    "ts-loader": "^8.0.17",
+    "typescript": "^3.5.3",
     "uglifyjs-webpack-plugin": "^2.1.0",
     "url-loader": "^1.1.2",
+    "vue-class-component": "^7.2.6",
     "vue-eslint-parser": "^6.0.4",
     "vue-loader": "^15.4.2",
+    "vue-property-decorator": "^9.1.2",
     "vue-template-compiler": "^2.5.21",
     "webpack": "^4.27.1",
     "webpack-bundle-analyzer": "^3.3.2",

@@ -5,7 +5,7 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, "../src/main.js")
+    app: path.resolve(__dirname, "../src/main.ts")
   },
   output: {
     path: path.resolve(__dirname, "../dist"),
@@ -18,6 +18,14 @@ module.exports = {
         test: /\.js$/,
         use: ["babel-loader"],
         exclude: /node_modules/
+      },
+      {
+        test: /\.ts$/,
+        loader: "ts-loader",
+        exclude: /node-modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
       },
       {
         test: /\.svg$/,
@@ -34,7 +42,7 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              limit: 10000,
+              limit: 10000, // 小于这个参数将被打包成base64写入js代码
               name: "static/img/[name].[hash:7].[ext]"
             }
           }
@@ -72,6 +80,6 @@ module.exports = {
   devtool: process.env.NODE_ENV === "development" ? "inline-source-map" : "source-map",
   // 导入不用写扩展名的
   resolve: {
-    extensions: [".js", ".json", ".vue"]
+    extensions: [".js", ".json", ".vue", ".ts"]
   }
 };

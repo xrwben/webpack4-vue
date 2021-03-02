@@ -31,11 +31,11 @@ module.exports = webpackMerge(webpackBaseConfig, {
   ],
   devServer: {
     host: "localhost",
-		port: "8080",
+		port: "8888",
 		contentBase: path.resolve(__dirname, "../dist"),
 		compress: true,
 		hot: true,
-		open: true,
+		// open: true,
 		inline: true,
 		historyApiFallback: true,
 		overlay: {
@@ -50,6 +50,11 @@ module.exports = webpackMerge(webpackBaseConfig, {
 			// 代理多个
 			// context: ["/api"],
 			// target: ""
+			"/luckySugar4": {
+				target: "https://www.tuho.tv/",
+				changeOrigin: true,
+				secure: false,
+			}
 		}
   }
 })

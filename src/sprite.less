@@ -1,0 +1,73 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_sprite-award_sprite () {
+    .sprite-award-s {
+        background: url('./images/sprite-award.png') no-repeat;
+        background-size: 568/@bf 562/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .award-gift { .getSprite(279, 276, 0, 0); }
+    .award-xz { .getSprite(279, 276, 289, 0); }
+    .award-zj { .getSprite(279, 276, 0, 286); }
+}
+.set_sprite-award_sprite();
+
+.set_sprite-btn_sprite () {
+    .sprite-btn-s {
+        background: url('./images/sprite-btn.png') no-repeat;
+        background-size: 308/@bf 297/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .colose { .getSprite(59, 59, 217, 149); }
+    .mrt { .getSprite(207, 79, 0, 149); }
+    .today-gray { .getSprite(135, 59, 0, 238); }
+    .today-normal { .getSprite(149, 139, 0, 0); }
+    .yestoday-gray { .getSprite(135, 59, 145, 238); }
+    .yestoday-normal { .getSprite(149, 139, 159, 0); }
+}
+.set_sprite-btn_sprite();
+
+.set_sprite-icon_sprite () {
+    .sprite-icon-s {
+        background: url('./images/sprite-icon.png') no-repeat;
+        background-size: 570/@bf 543/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .avatar-1 { .getSprite(570, 299, 0, 0); }
+    .avatar-2 { .getSprite(262, 154, 0, 309); }
+    .avatar-3 { .getSprite(264, 139, 272, 309); }
+    .txzzz-1 { .getSprite(203, 70, 0, 473); }
+    .txzzz-2 { .getSprite(185, 55, 213, 473); }
+}
+.set_sprite-icon_sprite();
+
+.set_sprite-text_sprite () {
+    .sprite-text-s {
+        background: url('./images/sprite-text.png') no-repeat;
+        background-size: 777/@bf 303/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .award-tip-gift { .getSprite(301, 28, 0, 152); }
+    .award-tip-xz { .getSprite(301, 28, 311, 152); }
+    .award-tip-zj { .getSprite(167, 28, 192, 190); }
+    .distance { .getSprite(148, 29, 0, 234); }
+    .fifth { .getSprite(34, 29, 326, 234); }
+    .first { .getSprite(15, 30, 0, 273); }
+    .fourth { .getSprite(32, 29, 456, 234); }
+    .rank { .getSprite(74, 29, 242, 234); }
+    .second { .getSprite(33, 29, 370, 234); }
+    .third { .getSprite(33, 29, 413, 234); }
+    .tips { .getSprite(182, 34, 0, 190); }
+    .title-award { .getSprite(777, 66, 0, 76); }
+    .title-rank { .getSprite(777, 66, 0, 0); }
+    .user { .getSprite(74, 29, 158, 234); }
+}
+.set_sprite-text_sprite();

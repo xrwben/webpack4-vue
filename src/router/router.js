@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-const Login = resolve => require(["../page/Login.vue"], resolve);
+import Login from "../page/Login.vue";
 
 Vue.use(Router);
 
