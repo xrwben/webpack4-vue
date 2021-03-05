@@ -25,7 +25,7 @@
 				</div>
 			</div>
 		</div>
-
+		<button @click="redirect">route函数跳转</button>
 	</div>
 </template>
 
@@ -104,6 +104,11 @@
 			}).finally(() => {
 				this.$refs.loading && (this.$refs.loading as any).hide()
 			})
+		}
+
+		redirect () {
+			console.log(this, this["$router"])
+			this.$router.push("/about")
 		}
 
 

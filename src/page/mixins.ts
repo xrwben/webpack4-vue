@@ -12,7 +12,7 @@ export default class Mixins extends Vue {
     }
 
     // methods
-    getAwardList () {
+    getAwardList ():void {
         axios.get('/luckySugar4/prizeList').then(res => {
             if (res.data.errno === 0) {
                 const resData = res.data.data

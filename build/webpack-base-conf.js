@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
+// const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const { VueLoaderPlugin } = require('vue-loader');
 
 
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         loader: "ts-loader",
         exclude: /node-modules/,
         options: {
@@ -33,7 +34,7 @@ module.exports = {
         include: [path.resolve(__dirname, "../src/asserts/icon")],
         options: {
           symbolId: "x-icon-[name]",
-        },
+        }
       },
       {
         test: /\.(png|svg|jpg|gif|ico|woff|woff2|eot|ttf|otf)$/i,
