@@ -29,6 +29,7 @@
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^5.1.2",
     "css-loader": "^2.0.1",
     "eslint": "^5.16.0",
     "eslint-config-bitpower": "^0.0.9",

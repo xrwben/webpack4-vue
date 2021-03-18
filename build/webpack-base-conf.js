@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -67,11 +68,23 @@ module.exports = {
       cache: true, // 内容变化的时候是否生成一个新的文件
       chunksSortMode: "dependency" // script顺序 有四个值
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new CopyWebpackPlugin(
+      [
+        {
+          from: path.resolve(__dirname, "../src/a.js"),
+          to: path.resolve(__dirname, "../dist")
+        }
+      ]
+    )
   ],
   devtool: process.env.NODE_ENV === "development" ? "inline-source-map" : "source-map",
   // 导入不用写扩展名的
   resolve: {
     extensions: [".js", ".json", ".vue"]
+  },
+  // 防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖
+  externals: {
+    dll: 'dll'
   }
 };

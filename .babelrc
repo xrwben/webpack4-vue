@@ -8,5 +8,5 @@
       // "useBuiltIns": "usage"
     }]
   ],
-  "plugins": ["@babel/plugin-transform-runtime", "transform-vue-jsx"]
+  "plugins": ["@babel/plugin-transform-runtime", "transform-vue-jsx", "@babel/plugin-transform-modules-umd"]
 }
